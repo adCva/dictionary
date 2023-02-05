@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import Input from './Components/Input';
+import Nav from './Components/Nav';
+import Resault from './Components/Resault';
+import './Reset.css';
+import "./Scss/style.css";
+// Redux.
+import { useSelector } from 'react-redux';
 
 function App() {
+  const isThemeDark = useSelector((state) => state.theme.isDarkTheme);
+  const activeFont = useSelector((state) => state.font.activeFont);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${isThemeDark ? "dark-bg" : "light-bg"} font-${activeFont}`}>
+      <Nav />
+      <Input />
+      <Resault />
     </div>
   );
 }

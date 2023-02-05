@@ -1,0 +1,52 @@
+@import "config";
+@import "nav";
+@import "input";
+@import "resault";
+
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    height: 100dvh;
+    font-family: serif;
+    transition: all 0.25s ease-in-out;
+}
+
+.dark-bg {
+    background: $dark-bg;
+    color: $text-dark-color;
+}
+
+.light-bg {
+    background: $light-bg;
+    color: $text-light-color;
+}
+
+.font-serif {
+    font-family: serif;
+    font-size: 15px;
+}
+.font-sans-serif {
+    font-family: sans-serif;
+    font-size: 15px;
+}
+.font-monospace {
+    font-family: monospace;
+    font-size: 14px;
+}
+
+
+h1 {
+    color: $h1-light-color;
+}
+
+.dark-header {
+    color: $h1-dark-color;
+}
+
+
+.moon {
+    color: $audio-btn;
+}

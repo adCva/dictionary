@@ -1,0 +1,58 @@
+.nav-container {
+    @extend %general-width;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav-btns-container {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+
+        .dropdown-container {
+            position: relative;
+
+            .dropdown-content {
+                position: absolute;
+                display: grid;
+                transform: scale(1, 1);
+                transform-origin: top;
+                transition: all 0.25s ease-in-out;
+            }
+
+            .hide-dropdown-content {
+                // transform: scale(1, 0);
+            }
+        }
+
+        .theme-switcher {
+            display: inline-block;
+            position: relative;
+            width: 40px;
+            height: 20px;
+            background: #ccc;
+            border-radius: 10px;
+        
+            
+            .switch {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 20px;
+                height: 20px;
+                background: #fff;
+                border-radius: 50%;
+                transition: all 0.3s ease-in-out;
+            }
+        
+            .light {
+                left: 0;
+            }
+        
+            .dark {
+                left: 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.resault-container {
+    @extend %general-width;
+
+    .intro-container {
+        .small-desc {
+            h1 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                transition: all 0.25s ease-in-out;
+            }
+
+            p {
+                color: $theme-btn-bg-dark;
+            }
+        }
+    }
+}

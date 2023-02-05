@@ -1,0 +1,26 @@
+// =================== Colors
+$audio-btn: #e6ccf9;
+
+
+// Light theme colors:
+$light-bg: #ffffff;
+$input-light-bg: #f5f5f5;
+$h1-light-color: #222222;
+$text-light-color: #3b3b3b;
+$theme-btn-bg-light: #1f1f1f;
+
+
+// Dark theme colors:
+$dark-bg: #050505;
+$input-dark-bg: #1f1f1f;
+$h1-dark-color: #f1f0f0;
+$text-dark-color: #a5a5a5;
+$theme-btn-bg-dark: #a446e4;
+
+
+
+%general-width {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}

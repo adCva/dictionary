@@ -1,0 +1,130 @@
+.resault-container, .input-container, .nav-container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-container .nav-btns-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.nav-container .nav-btns-container .dropdown-container {
+  position: relative;
+}
+.nav-container .nav-btns-container .dropdown-container .dropdown-content {
+  position: absolute;
+  display: grid;
+  transform: scale(1, 1);
+  transform-origin: top;
+  transition: all 0.25s ease-in-out;
+}
+.nav-container .nav-btns-container .theme-switcher {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background: #ccc;
+  border-radius: 10px;
+}
+.nav-container .nav-btns-container .theme-switcher .switch {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+.nav-container .nav-btns-container .theme-switcher .light {
+  left: 0;
+}
+.nav-container .nav-btns-container .theme-switcher .dark {
+  left: 20px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  background: #ccc;
+  padding: 10px;
+  border-radius: 10px;
+}
+.input-container input {
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+}
+.input-container .focused input[type=text] {
+  box-shadow: 0 0 0 2px blue;
+}
+.input-container .icon-search {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.resault-container .intro-container .small-desc h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  transition: all 0.25s ease-in-out;
+}
+.resault-container .intro-container .small-desc p {
+  color: #a446e4;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  height: 100dvh;
+  font-family: serif;
+  transition: all 0.25s ease-in-out;
+}
+
+.dark-bg {
+  background: #050505;
+  color: #a5a5a5;
+}
+
+.light-bg {
+  background: #ffffff;
+  color: #3b3b3b;
+}
+
+.font-serif {
+  font-family: serif;
+  font-size: 15px;
+}
+
+.font-sans-serif {
+  font-family: sans-serif;
+  font-size: 15px;
+}
+
+.font-monospace {
+  font-family: monospace;
+  font-size: 14px;
+}
+
+h1 {
+  color: #222222;
+}
+
+.dark-header {
+  color: #f1f0f0;
+}
+
+.moon {
+  color: #e6ccf9;
+}/*# sourceMappingURL=style.css.map */

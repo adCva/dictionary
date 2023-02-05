@@ -1,0 +1,29 @@
+.input-container {
+    @extend %general-width;
+    display: flex;
+    align-items: center;
+    background: #ccc;
+    padding: 10px;
+    border-radius: 10px;
+
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .focused input[type='text'] {
+    box-shadow: 0 0 0 2px blue;
+  }
+  
+  .icon-search {
+    margin-left: 10px;
+    font-size: 20px;
+  }
+
+
+}
