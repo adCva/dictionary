@@ -1,7 +1,14 @@
+
+/*
 .resault-container {
     @extend %general-width;
 
     .intro-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2rem 0 1rem;
+
         .small-desc {
             h1 {
                 font-size: 2.5rem;
@@ -13,5 +20,71 @@
                 color: $theme-btn-bg-dark;
             }
         }
+
+
+        .play-btn {
+            background: $theme-btn-bg-dark;
+            border-radius: 50%;
+            color: $audio-btn;
+            font-size: 3rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+
+    .meanings-wrapper {
+        .meaning-container {
+            margin-bottom: 1.5rem;
+
+            .partOfSpeech {
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+                
+
+                &::after {
+                    content: "";
+                    display: inline;
+                    height: 1px;
+                    width: 100%;
+                    background-color: $text-light-color;
+                }
+            }
+
+
+            .meaning {
+                font-size: 1.2rem;
+                color: $text-light-color;
+                margin: 0.5rem 0;
+            }    
+            
+            
+            .definition {
+                font-size: 0.9rem;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+
+                &::before {
+                    content: "";
+                    height: 2px;
+                    width: 2px;
+                    border-radius: 50%;
+                    display: inline-block;
+                    background-color: red;
+                }
+            }
+        }
     }
 }
+
+
+.page-load-no-word {
+    background-color: red;
+}
+
+*/

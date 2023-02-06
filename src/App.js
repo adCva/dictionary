@@ -12,9 +12,11 @@ function App() {
 
   return (
     <div className={`App ${isThemeDark ? "dark-bg" : "light-bg"} font-${activeFont}`}>
-      <Nav />
-      <Input />
-      <Resault />
+      <div className={`dictionary-app ${isThemeDark ? "app-dark-bg" : "app-light-bg"}`}>
+        <Nav />
+        <Input />
+        <Resault />
+      </div>
     </div>
   );
 }

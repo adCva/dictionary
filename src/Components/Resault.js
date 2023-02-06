@@ -52,7 +52,7 @@ function Resault() {
                         <h1 className={isThemeDark ? "dark-header" : ""}>{wordData[0].word}</h1>
                         <p>{wordData[0].phonetic}</p>
                     </div>
-                    <button onClick={playWordAudio}><FaPlayCircle /></button>
+                    <button onClick={playWordAudio} className="play-btn"><FaPlayCircle /></button>
                 </div>
                 {/* ================ Meaning/s, some words return the part of speech &/or meaning into two or more different objects, hence the need for the first map ================ */}
                 {wordData.map((word, i) => {
@@ -62,10 +62,10 @@ function Resault() {
                                 return (
                                     <div key={j} className="meaning-container">
                                         <p className='partOfSpeech'>{meaning.partOfSpeech}</p>
-                                        <p>Meaning</p>
+                                        <p className='meaning'>Meaning</p>
                                         {meaning.definitions.map((def, k) => {
                                             return (
-                                                <p key={k}>{def.definition}</p>
+                                                <p key={k} className="definition">{def.definition}</p>
                                             )
                                         })}
                                         {meaning.synonyms.length !== 0 &&

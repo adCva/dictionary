@@ -46,21 +46,21 @@ function Nav() {
 
   return (
     <div className='nav-container'>
-      <BiBook />
+      <BiBook className={`nav-icon ${isThemeDark ? "nav-icon-dark": ""}`} />
       <div className='nav-btns-container'>
         <div className='dropdown-container'>
-          <button onClick={toggleDropDown}>{capitalizeWords(activeFont)} <BiChevronDown/></button>
-          <div className={isDropDownOpened ? 'dropdown-content' : 'hide-dropdown-content'}>
+          <button onClick={toggleDropDown} className={isThemeDark ? "dark-font-btn" : ""}>{capitalizeWords(activeFont)} <BiChevronDown className='button-arrow-icon'/></button>
+          <div className={isDropDownOpened ? 'show-dropdown-content dropdown-content' : 'hide-dropdown-content dropdown-content'}>
             <button onClick={() => handleChangingFont("serif")}>Serif</button>
             <button onClick={() => handleChangingFont("sans-serif")}>Sans Serif</button>
             <button onClick={() => handleChangingFont("monospace")}>Monospace</button>
           </div>
         </div>
         <div className='align-right'>
-          <div className='theme-switcher' onClick={handleTheme}>
+          <div className={`${isThemeDark ? "theme-switcher-dark theme-switcher" : "theme-switcher"}`} onClick={handleTheme}>
             <button className={`switch ${isThemeDark ? "dark" : "light"}`} />
           </div>
-          {isThemeDark ? <BiMoon className='moon'/> : <BiSun /> }
+          {isThemeDark ? <BiMoon className={`moon ${isThemeDark ? "moon-dark" : ""}`}/> : <BiSun /> }
         </div>
       </div>
     </div>
