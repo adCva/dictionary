@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 // Icon.
 import { BiSearch } from "react-icons/bi";
 // Redux.
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { newWord } from "../Redux/dataSlice";
 
 function Input() {
   const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState('');
+  const isThemeDark = useSelector((state) => state.theme.isDarkTheme);
 
   const callAPI = async () => {
     try {
@@ -21,8 +22,8 @@ function Input() {
 
   
   return (
-    <div className="input-container">
-        <input type="text" onChange={e => setInputValue(e.target.value)} />
+    <div className={isThemeDark ? "input-container input-container-dark" : "input-container"}>
+        <input type="text" onChange={e => setInputValue(e.target.value)} placeholder="word" />
         <button className='icon-search' onClick={callAPI}><BiSearch /></button>
     </div>
   )

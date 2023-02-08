@@ -4,23 +4,38 @@
   align-items: center;
   margin: 1.5rem 0;
   padding: 10px;
-  border-radius: 10px;
-
+  border-radius: 20px;
+  transition: $transition;
 
   input {
     background: transparent;
+    // font-weight: 500;
     width: 100%;
-    padding: 5px;
+    padding-left: 5px;
     border: 0;
     outline: 0;
     transition: $transition;
   }
 
-
   .icon-search {
     background: transparent;
-    font-size: 20px;
     color: $theme-btn-bg-dark;
+    font-size: 20px;
+    margin-right: 0.3rem;
     cursor: pointer;
+    transition: $transition;
+  }
+}
+
+
+.input-container-dark {
+  background: $input-dark-bg;
+
+  input {
+    color: $text-dark-color;
+  }
+
+  .icon-search {
+    color: #d097f8;
   }
 }

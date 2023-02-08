@@ -1,90 +1,191 @@
-
-/*
 .resault-container {
-    @extend %general-width;
+    // background: red;
 
+    // ========================= Intro container.
     .intro-container {
         display: flex;
+        width: 100%;
         justify-content: space-between;
         align-items: center;
-        margin: 2rem 0 1rem;
 
         .small-desc {
             h1 {
                 font-size: 2.5rem;
                 font-weight: 700;
-                transition: all 0.25s ease-in-out;
+                transition: $transition;
             }
 
             p {
-                color: $theme-btn-bg-dark;
+                color: #d097f8;
+                transition: $transition;
+            }
+        }
+
+        .play-btn {
+            background: transparent;
+            color: #d097f8;
+            font-size: 2.7rem;
+            cursor: pointer;
+            transition: $transition;
+        }
+    }
+
+
+    // ========================= Meaning Wrapper.
+    .meanings-wrapper {
+        margin-top: 2rem;
+
+
+        // ========================= Meaning container.
+        .meaning-container {
+
+            // ========================= Part of speech.
+            .partOfSpeech {
+                font-size: 1.15rem;
+                font-weight: 600;
+                font-style: italic;
+                letter-spacing: -0.3px;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                transition: $transition;
+
+                &::after {
+                    content: "";
+                    background-color: rgba(0, 0, 0, 0.15);
+                    display: inline;
+                    height: 1px;
+                    width: 100%;
+                    margin-top: 3px;
+                }
+            }
+
+
+            // ========================= Meaning keyword.
+            .meaning {
+                color: $text-dark-color;
+                font-size: 1.05rem;
+                letter-spacing: -0.3px;
+                margin: 1.5rem 0 0.7rem;
+            }
+
+
+            // ========================= Definition.
+            .definition {
+                position: relative;
+                color: #a5a5a5;
+                line-height: 1.2;
+                letter-spacing: -0.3px;
+                display: flex;
+                margin-left: 1rem;
+                margin-bottom: 1.5rem;
+                
+                &::before {
+                    content: ".";
+                    color: #a446e4;
+                    position: absolute;
+                    top: -18px;
+                    left: -18px;
+                    font-size: 2rem;
+                    display: inline;
+                    height: 6px;
+                    width: 6px;
+                    border-radius: 50px;
+                }
+            }
+
+
+            // ========================= Synonyms container.
+            .synonyms-container {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin: 1.5rem 0 2rem;
+
+                h4 {
+                    color: #a5a5a5;
+                }
+
+                p {
+                    color: $theme-btn-bg-dark;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
             }
         }
 
 
+        // ========================= Source container.
+        .source-container {
+            margin: 2rem 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.15);
+
+            p {
+                color: #a5a5a5;
+                margin-bottom: 0.5rem;
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                color: #555555;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+.resault-container-dark {
+    .intro-container {
+        .small-desc {
+            h1 {
+                color: $h1-dark-color;
+            }
+
+            p {
+                color: #a446e4;
+            }
+        }
+
         .play-btn {
-            background: $theme-btn-bg-dark;
-            border-radius: 50%;
-            color: $audio-btn;
-            font-size: 3rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            color: #a446e4;
         }
     }
 
 
     .meanings-wrapper {
         .meaning-container {
-            margin-bottom: 1.5rem;
 
             .partOfSpeech {
-                font-weight: 700;
-                display: flex;
-                align-items: center;
-                gap: 2rem;
-                
+                color: $h1-dark-color;
 
                 &::after {
-                    content: "";
-                    display: inline;
-                    height: 1px;
-                    width: 100%;
-                    background-color: $text-light-color;
+                    background-color: rgba(255, 255, 255, 0.15);
                 }
             }
 
+            .meaning {}
 
-            .meaning {
-                font-size: 1.2rem;
-                color: $text-light-color;
-                margin: 0.5rem 0;
-            }    
-            
-            
+
             .definition {
-                font-size: 0.9rem;
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-
                 &::before {
-                    content: "";
-                    height: 2px;
-                    width: 2px;
-                    border-radius: 50%;
-                    display: inline-block;
-                    background-color: red;
+                    color: #d097f8;
                 }
             }
+            
+            .synonyms-container {
+                h4 {}
+                p {}
+            }
+        }
+
+        .source-container {
+            p {}
+
+            a {}
         }
     }
 }
-
-
-.page-load-no-word {
-    background-color: red;
-}
-
-*/

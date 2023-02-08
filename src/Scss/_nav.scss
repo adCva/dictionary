@@ -1,60 +1,84 @@
 .nav-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-content: center;
 
 
     // ========================= Icon.
-    .nav-icon {
-        color: $text-light-color;
+    .nav-icon{
+        color: #818181;
         font-size: 2rem;
-        transition: $transition;
-    }
-
-    .nav-icon-dark {
-        color: $text-dark-color;
     }
 
 
-    // ========================= Buttons Container.
-    .nav-btns-container {
+    // ========================= Interactive container.
+    .interactive-container {
         display: flex;
-        justify-content: center;
         align-items: center;
-        gap: 1rem;
 
 
         // ========================= Dropdown Container.
         .dropdown-container {
             position: relative;
             padding-right: 0.5rem;
-            border-right: 1px solid $text-dark-color;
+            border-right: 1px solid rgba(0, 0, 0, 0.15);
 
             button {
                 background: transparent;
                 display: flex;
                 align-items: center;
-                gap: 0.5rem;
+                gap: 0.4rem;
+                font-size: 0.85rem;
+                font-weight: 600;
+                letter-spacing: 0.3px;
+                padding: 0 0.5rem;
                 cursor: pointer;
+                transition: $transition;
 
                 .button-arrow-icon {
                     background: transparent;
-                    color: $theme-btn-bg-dark;
-                    font-size: 1.1rem;
+                    color: #d097f8;
+                    font-size: 1.2rem;
+                }
+            }
+
+            .dark-font-btn {
+                color: $h1-dark-color;
+
+                .button-arrow-icon {
+                    color: #a446e4;
                 }
             }
 
 
             // ========================= Dropdown Content.
             .dropdown-content {
-                background-color: red;
+                background-color: $light-app-bg;
                 position: absolute;
                 top: 25px;
-                display: flex;
-                flex-direction: column;
-                gap: 0.4rem;
+                padding: 0.5rem 0;
                 transform-origin: top;
                 transition: $transition;
+                z-index: 999;
+                border-radius: 5px;
+
+                button {
+                    font-weight: 400;
+                    margin-bottom: 1rem;
+                    transition: $transition;
+
+                    &:last-of-type {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .dropdown-content-dark {
+                background-color: $dark-app-bg;
+
+                button {
+                    color: $h1-dark-color;
+                }
             }
 
             .show-dropdown-content {
@@ -67,40 +91,55 @@
         }
 
 
-        // ========================= Theme Switcher.
-        .align-right {
+        // ========================= Theme Btn Container.
+        .theme-container {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-        
+            padding-left: 1rem;
+
 
             .theme-switcher {
                 display: inline-block;
                 position: relative;
                 width: 40px;
                 height: 20px;
-                background: $theme-btn-bg-light;
+                background: #999999;
                 border-radius: 10px;
-
+                cursor: pointer;
 
                 .switch {
                     position: absolute;
-                    left: 0;
-                    top: 1px;
-                    width: 18px;
-                    height: 18px;
-                    background: #fff;
+                    left: 3px;
+                    top: 3px;
+                    width: 14px;
+                    height: 14px;
+                    background: $light-app-bg;
                     border-radius: 50%;
                     transition: all 0.3s ease-in-out;
                 }
 
                 .light {
-                    left: 0;
+                    left: 3px;
                 }
 
                 .dark {
-                    left: 20px;
+                    left: 22px;
                 }
+            }
+
+            .theme-switcher-dark {
+                background: #a446e4;
+            }
+
+            .sun {
+                font-size: 1.2rem;
+                color: #d097f8;
+            }
+
+            .moon {
+                font-size: 1.2rem;
+                color: #a446e4;
             }
         }
     }

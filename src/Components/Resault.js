@@ -1,6 +1,7 @@
 import React from 'react';
 // Icons.
 import { FaPlayCircle } from "react-icons/fa";
+import { RiExternalLinkLine } from "react-icons/ri";
 // Redux.
 import { useSelector, useDispatch } from 'react-redux';
 import { newWord } from "../Redux/dataSlice";
@@ -46,13 +47,13 @@ function Resault() {
                 No such word exists
             </div>
         :
-            <div className='resault-container'>
+            <div className={isThemeDark ? "resault-container resault-container-dark" : "resault-container"}>
                 <div className='intro-container'>
                     <div className='small-desc'>
                         <h1 className={isThemeDark ? "dark-header" : ""}>{wordData[0].word}</h1>
-                        <p>{wordData[0].phonetic}</p>
+                        <p className={isThemeDark ? "dark-phonetic" : ""}>{wordData[0].phonetic}</p>
                     </div>
-                    <button onClick={playWordAudio} className="play-btn"><FaPlayCircle /></button>
+                    <button onClick={() => console.log(wordData)} className={isThemeDark ? "play-btn play-btn-dark" : "play-btn"}><FaPlayCircle /></button>
                 </div>
                 {/* ================ Meaning/s, some words return the part of speech &/or meaning into two or more different objects, hence the need for the first map ================ */}
                 {wordData.map((word, i) => {
@@ -69,8 +70,8 @@ function Resault() {
                                             )
                                         })}
                                         {meaning.synonyms.length !== 0 &&
-                                            <div>
-                                                <h4>Synonyms:</h4>
+                                            <div className='synonyms-container'>
+                                                <h4>Synonyms</h4>
                                                 {meaning.synonyms.map((synonim, l) => {
                                                     return (
                                                         <p key={l} onClick={() => callAPIforSynonymClick(synonim)}>{synonim}</p>
@@ -81,6 +82,10 @@ function Resault() {
                                     </div>
                                 )
                             })}
+                            <div className='source-container'>
+                                <p>Source</p>
+                                <a href={word.sourceUrls[0]} target="_blank" rel="no-rel">{word.sourceUrls[0]} <RiExternalLinkLine /></a>
+                            </div>
                         </div>
                     )
                 })}

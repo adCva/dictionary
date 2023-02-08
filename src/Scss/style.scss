@@ -2,69 +2,36 @@
 @import "nav";
 @import "input";
 @import "resault";
-@import "lightTheme";
-@import "darkTheme";
-
 
 .App {
+    padding: 1.5rem 1.3rem;
+    transition: $transition;
     height: 100vh;
     height: 100dvh;
-    padding: 1rem;
-    transition: $transition;  
 
-    @media (min-width: 768px) {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
+    .app-wrapper {
+        max-width: 600px;
+        margin: 0 auto 0;
     }
 }
 
-
-.dictionary-app {
-    max-width: 550px;   
-    transition: $transition; 
-    padding: 1rem;
+.light-bg {
+    background-color: $light-app-bg;
 }
 
+.dark-bg {
+    background-color: $dark-app-bg;
+}
 
 .font-serif {
     font-family: serif;
-    font-size: 15px;
 }
-
 
 .font-sans-serif {
     font-family: sans-serif;
-    font-size: 15px;
+    font-size: 15.5px;
 }
-
 
 .font-monospace {
     font-family: monospace;
-    font-size: 14px;
 }
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-h1 {
-    color: $h1-light-color;
-}
-
-
-.dark-header {
-    color: $h1-dark-color;
-}
-
-*/
