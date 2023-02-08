@@ -7,6 +7,10 @@
   border-radius: 20px;
   transition: $transition;
 
+  @media (min-width: 411px) {
+    padding: 15px 12px;
+  }
+
   input {
     background: transparent;
     // font-weight: 500;
@@ -24,6 +28,10 @@
     margin-right: 0.3rem;
     cursor: pointer;
     transition: $transition;
+
+    &:hover {
+      color: greenyellow;
+    }
   }
 }
 

@@ -12,7 +12,12 @@
             h1 {
                 font-size: 2.5rem;
                 font-weight: 700;
+                margin-bottom: 0.5rem;
                 transition: $transition;
+
+                @media (min-width: 768px) {
+                    font-size: 2.7rem;
+                  }
             }
 
             p {
@@ -101,9 +106,22 @@
                 align-items: center;
                 gap: 1rem;
                 margin: 1.5rem 0 2rem;
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+
+                @media (min-width: 360px) {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+                @media (min-width: 768px) {
+                    grid-template-columns: repeat(4, 1fr);
+                }
 
                 h4 {
                     color: #a5a5a5;
+                    font-size: 1.2rem;
                 }
 
                 p {
@@ -138,6 +156,7 @@
 }
 
 
+// ========================= Resault dark theme.
 .resault-container-dark {
     .intro-container {
         .small-desc {
@@ -187,5 +206,29 @@
 
             a {}
         }
+    }
+}
+
+
+// ========================= Resault error message.
+.page-error-no-word {
+    text-align: center;
+    margin-top: 2.5rem;
+
+    h1 {
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+    }
+
+    iframe {
+        width: 100%;
+    }
+}
+
+
+// ========================= Resault error message dark.
+.page-error-no-word-dark {
+    h1 {
+        color: $h1-dark-color;
     }
 }

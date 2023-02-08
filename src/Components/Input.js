@@ -20,10 +20,17 @@ function Input() {
     }
   }
 
+
+  const searchOnKeyPress = (e) => {
+    if (e.code === "Enter" || e.code === "NumpadEnter") {
+      callAPI();
+    }
+  }
+
   
   return (
     <div className={isThemeDark ? "input-container input-container-dark" : "input-container"}>
-        <input type="text" onChange={e => setInputValue(e.target.value)} placeholder="word" />
+        <input type="text" onChange={e => setInputValue(e.target.value)} placeholder="word"  onKeyDown={searchOnKeyPress} />
         <button className='icon-search' onClick={callAPI}><BiSearch /></button>
     </div>
   )

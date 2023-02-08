@@ -42,14 +42,6 @@
                 }
             }
 
-            .dark-font-btn {
-                color: $h1-dark-color;
-
-                .button-arrow-icon {
-                    color: #a446e4;
-                }
-            }
-
 
             // ========================= Dropdown Content.
             .dropdown-content {
@@ -70,14 +62,6 @@
                     &:last-of-type {
                         margin-bottom: 0;
                     }
-                }
-            }
-
-            .dropdown-content-dark {
-                background-color: $dark-app-bg;
-
-                button {
-                    color: $h1-dark-color;
                 }
             }
 
@@ -128,10 +112,6 @@
                 }
             }
 
-            .theme-switcher-dark {
-                background: #a446e4;
-            }
-
             .sun {
                 font-size: 1.2rem;
                 color: #d097f8;
@@ -140,6 +120,38 @@
             .moon {
                 font-size: 1.2rem;
                 color: #a446e4;
+            }
+        }
+    }
+}
+
+
+
+// ============================ Nav dark theme.
+.nav-container-dark {
+    .interactive-container {
+        .dropdown-container {
+            button {
+                color: $h1-dark-color;
+
+                .button-arrow-icon {
+                    color: #a446e4;
+                }
+            }
+
+            
+            .dropdown-content {
+                background-color: $dark-app-bg;
+
+                button {
+                    color: $h1-dark-color;
+                }
+            }
+        }
+
+        .theme-container {
+            .theme-switcher {
+                background: #a446e4;
             }
         }
     }
