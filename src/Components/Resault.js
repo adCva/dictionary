@@ -36,11 +36,13 @@ function Resault() {
     return (
         wordData[0] === undefined 
         ?
+            /* ================================== Error Message ================================== */
             <div className={isThemeDark ? "page-error-no-word page-error-no-word-dark" : "page-error-no-word"}>
-                <h1>Sorry. We can't find the word. Here is something you will like.</h1>
+                <h1>Either the word you searched does not exists or there is a problem with the servers. Here is something to cheer you up.</h1>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         :
+            /* ================================== Content ================================== */
             <div className={isThemeDark ? "resault-container resault-container-dark" : "resault-container"}>
                 <div className='intro-container'>
                     <div className='small-desc'>
@@ -60,7 +62,10 @@ function Resault() {
                                         <p className='meaning'>Meaning</p>
                                         {meaning.definitions.map((def, k) => {
                                             return (
-                                                <p key={k} className="definition">{def.definition}</p>
+                                                <div key={k} className="definition-container">
+                                                    <span></span>
+                                                    <p className="definition">{def.definition}</p>
+                                                </div>
                                             )
                                         })}
                                         {meaning.synonyms.length !== 0 &&

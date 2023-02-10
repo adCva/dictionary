@@ -13,9 +13,15 @@ function App() {
   return (
     <div className={`App ${isThemeDark ? "dark-bg" : "light-bg"} font-${activeFont}`}>
       <div className='app-wrapper'>
-        <Nav />
-        <Input />
-        <Resault />
+
+        <header>
+          <Nav />
+        </header>
+        <main>
+          <Input />
+          <Resault />
+        </main>
+        
       </div>
     </div>
   );

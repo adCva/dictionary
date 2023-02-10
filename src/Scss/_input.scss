@@ -2,36 +2,61 @@
   background: $input-light-bg;
   display: flex;
   align-items: center;
-  margin: 1.5rem 0;
-  padding: 10px;
+  margin: 1.5rem 0 2rem;
+  padding: 10px 12px;
   border-radius: 20px;
   transition: $transition;
 
   @media (min-width: 411px) {
-    padding: 15px 12px;
+    padding: 12px;
   }
+
+  @media (min-width: 768px) {
+    padding: 1rem;
+    margin: 2.2rem 0 3.2rem;
+  }
+  
 
   input {
     background: transparent;
-    // font-weight: 500;
+    color: $text-light-color;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     width: 100%;
-    padding-left: 5px;
+    padding-left: 10px;
     border: 0;
     outline: 0;
     transition: $transition;
   }
 
+
   .icon-search {
     background: transparent;
-    color: $theme-btn-bg-dark;
-    font-size: 20px;
-    margin-right: 0.3rem;
+    color: $pink-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-right: 0.5rem;
     cursor: pointer;
     transition: $transition;
 
     &:hover {
-      color: greenyellow;
+      color: $pink-light-hover;
     }
+
+    @media (min-width: 411px) {
+      font-size: 23px;
+    }
+
+    @media (min-width: 540px) {
+      font-size: 24px;
+    }
+
+    @media (min-width: 768px) {
+      // font-size: 25px;
+    }
+
   }
 }
 
@@ -44,6 +69,10 @@
   }
 
   .icon-search {
-    color: #d097f8;
+    color: $pink-dark;
+
+    &:hover {
+      color: $pink-dark-hover;
+    }
   }
 }

@@ -10,6 +10,8 @@ function Input() {
   const [inputValue, setInputValue] = useState('');
   const isThemeDark = useSelector((state) => state.theme.isDarkTheme);
 
+
+  // Call API.
   const callAPI = async () => {
     try {
       const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${inputValue}`);
@@ -21,6 +23,7 @@ function Input() {
   }
 
 
+  // Call API on numpadEnter keyPress.
   const searchOnKeyPress = (e) => {
     if (e.code === "Enter" || e.code === "NumpadEnter") {
       callAPI();
@@ -30,7 +33,7 @@ function Input() {
   
   return (
     <div className={isThemeDark ? "input-container input-container-dark" : "input-container"}>
-        <input type="text" onChange={e => setInputValue(e.target.value)} placeholder="word"  onKeyDown={searchOnKeyPress} />
+        <input type="text" onChange={e => setInputValue(e.target.value)} placeholder="..."  onKeyDown={searchOnKeyPress} />
         <button className='icon-search' onClick={callAPI}><BiSearch /></button>
     </div>
   )

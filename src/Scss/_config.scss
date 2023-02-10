@@ -1,23 +1,25 @@
+$transition: all 0.25s ease-in-out;
+
 // =================== Colors.
-$audio-btn: #e6ccf9;
-
-
 // Light theme colors:
-$light-page-bg: #f0f0f0;
 $light-app-bg: #ffffff;
-$input-light-bg: #f5f5f5;
+$input-light-bg: #f4f4f4;
+$icon-light-color: #707070;
 $h1-light-color: #222222;
-$text-light-color: #3b3b3b;
-$theme-btn-bg-light: #1f1f1f;
+$text-light-color: #4b4b4b;
+$paragraph-light-color: #686868;
+$pink-light: #d097f8;
+$pink-light-hover: #f562fa;
+$border-light-color: rgba(63, 63, 63, 0.2);
 
 
 // Dark theme colors:
-$dark-page-bg: #333333;
 $dark-app-bg: #050505;
-$input-dark-bg: #1f1f1f;
+$input-dark-bg: #202020;
+$icon-dark-color: #cccccc;
 $h1-dark-color: #f1f0f0;
-$text-dark-color: #a5a5a5;
-$theme-btn-bg-dark: #a446e4;
-
-
-$transition: all 0.25s ease-in-out;
+$text-dark-color: #d3d3d3;
+$paragraph-dark-color: #bbbbbb;
+$pink-dark: #a446e4;
+$pink-dark-hover: #f8bdfa;
+$border-dark-color: rgba(255, 255, 255, 0.3);

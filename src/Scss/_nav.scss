@@ -6,8 +6,13 @@
 
     // ========================= Icon.
     .nav-icon{
-        color: #818181;
-        font-size: 2rem;
+        color: $icon-light-color;
+        font-size: 2em;
+        transition: $transition;
+
+        @media (min-width: 768px) {
+            font-size: 2.3em;
+        }
     }
 
 
@@ -20,47 +25,66 @@
         // ========================= Dropdown Container.
         .dropdown-container {
             position: relative;
-            padding-right: 0.5rem;
-            border-right: 1px solid rgba(0, 0, 0, 0.15);
+            border-right: 1px solid $border-light-color;
+
+            @media (min-width: 768px) {
+                padding-right: 0.4rem;
+            }
 
             button {
                 background: transparent;
+                color: $text-light-color;
                 display: flex;
                 align-items: center;
                 gap: 0.4rem;
-                font-size: 0.85rem;
                 font-weight: 600;
                 letter-spacing: 0.3px;
                 padding: 0 0.5rem;
                 cursor: pointer;
                 transition: $transition;
 
+                &:hover {
+                    .button-arrow-icon {
+                        color: $pink-light-hover;
+                    }
+                }
+
                 .button-arrow-icon {
                     background: transparent;
-                    color: #d097f8;
-                    font-size: 1.2rem;
+                    color: $pink-light;
+                    font-size: 1.5em;
+                    transition: $transition;
                 }
             }
 
 
             // ========================= Dropdown Content.
             .dropdown-content {
-                background-color: $light-app-bg;
+                background-color: $input-dark-bg;
                 position: absolute;
-                top: 25px;
-                padding: 0.5rem 0;
+                top: 30px;
+                padding: 1.2rem 1rem 1.2rem 0;
                 transform-origin: top;
-                transition: $transition;
                 z-index: 999;
                 border-radius: 5px;
+                transition: $transition;
+
+                @media (min-width: 768px) {
+                    top: 35px;
+                }
 
                 button {
-                    font-weight: 400;
-                    margin-bottom: 1rem;
+                    color: $h1-dark-color;
+                    font-weight: 600;
+                    margin-bottom: 1.5rem;
                     transition: $transition;
 
                     &:last-of-type {
                         margin-bottom: 0;
+                    }
+
+                    &:hover {
+                        color: $pink-light;
                     }
                 }
             }
@@ -80,7 +104,11 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            padding-left: 1rem;
+            padding-left: 0.7rem;
+
+            @media (min-width: 768px) {
+                padding-left: 1rem;
+            }
 
 
             .theme-switcher {
@@ -88,9 +116,14 @@
                 position: relative;
                 width: 40px;
                 height: 20px;
-                background: #999999;
+                background: $icon-light-color;
                 border-radius: 10px;
                 cursor: pointer;
+                transition: $transition;
+
+                &:hover {
+                    background: $paragraph-light-color;
+                }
 
                 .switch {
                     position: absolute;
@@ -114,12 +147,12 @@
 
             .sun {
                 font-size: 1.2rem;
-                color: #d097f8;
+                color: $text-dark-color;
             }
 
             .moon {
                 font-size: 1.2rem;
-                color: #a446e4;
+                color: $icon-light-color;
             }
         }
     }
@@ -129,29 +162,49 @@
 
 // ============================ Nav dark theme.
 .nav-container-dark {
+    .nav-icon{
+        color: $icon-dark-color;
+    }
+
     .interactive-container {
         .dropdown-container {
+            border-right: 1px solid $border-dark-color;
+
             button {
-                color: $h1-dark-color;
+                color: $text-dark-color;
+
+                &:hover {
+                    .button-arrow-icon {
+                        color: $pink-dark-hover;
+                    }
+                }
 
                 .button-arrow-icon {
-                    color: #a446e4;
+                    color: $pink-dark;
                 }
             }
 
             
             .dropdown-content {
-                background-color: $dark-app-bg;
+                background-color: $input-light-bg;
 
                 button {
-                    color: $h1-dark-color;
+                    color: $text-light-color;
+
+                    &:hover {
+                        color: $pink-dark;
+                    }
                 }
             }
         }
 
         .theme-container {
             .theme-switcher {
-                background: #a446e4;
+                background: $pink-dark;
+
+                &:hover {
+                    background: #b261e7;
+                }
             }
         }
     }

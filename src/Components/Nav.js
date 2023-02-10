@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // Icons.
-import { BiBookAlt, BiChevronDown, BiMoon, BiSun } from "react-icons/bi";
-import { FiBook } from "react-icons/fi";
+import { BiChevronDown, BiMoon, BiSun } from "react-icons/bi";
+import { GiBlackBook } from "react-icons/gi";
 // Redux.
 import { useSelector, useDispatch } from 'react-redux';
 import { newFont } from "../Redux/fontSlice";
@@ -45,7 +45,7 @@ function Nav() {
 
   return (
     <div className={isThemeDark ? "nav-container nav-container-dark" : "nav-container"}>
-      <BiBookAlt className="nav-icon" />
+      <GiBlackBook className="nav-icon" />
       <div className='interactive-container'>
         <div className='dropdown-container'>
           <button onClick={toggleDropDown}>{capitalizeWords(activeFont)} <BiChevronDown className='button-arrow-icon'/></button>
@@ -59,7 +59,7 @@ function Nav() {
           <div className="theme-switcher" onClick={handleTheme}>
             <button className={`switch ${isThemeDark ? "dark" : "light"}`} />
           </div>
-          {isThemeDark ? <BiMoon className="moon" /> : <BiSun className='sun'/> }
+          {isThemeDark ? <BiSun className="sun" /> : <BiMoon className='moon'/> }
         </div>
       </div>
     </div>

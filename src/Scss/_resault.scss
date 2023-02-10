@@ -1,5 +1,4 @@
 .resault-container {
-    // background: red;
 
     // ========================= Intro container.
     .intro-container {
@@ -10,28 +9,40 @@
 
         .small-desc {
             h1 {
-                font-size: 2.5rem;
+                color: $h1-light-color;
+                font-size: 2.5em;
                 font-weight: 700;
-                margin-bottom: 0.5rem;
+                letter-spacing: -0.3px;
+                margin-bottom: 0.65rem;
                 transition: $transition;
 
                 @media (min-width: 768px) {
-                    font-size: 2.7rem;
-                  }
+                    font-size: 2.7em;
+                }
+
+                @media (min-width: 1000px) {
+                    font-size: 2.8em;
+                }
             }
 
             p {
-                color: #d097f8;
+                color: $pink-light;
+                font-size: 1.1em;
+                letter-spacing: 1px;
                 transition: $transition;
             }
         }
 
         .play-btn {
             background: transparent;
-            color: #d097f8;
-            font-size: 2.7rem;
+            color: $pink-light;
+            font-size: 2.7em;
             cursor: pointer;
             transition: $transition;
+
+            &:hover {
+                color: $pink-light-hover;
+            }
         }
     }
 
@@ -40,13 +51,17 @@
     .meanings-wrapper {
         margin-top: 2rem;
 
+        @media (min-width: 768px) {
+            margin-top: 2.5rem;
+        }
 
         // ========================= Meaning container.
         .meaning-container {
 
             // ========================= Part of speech.
             .partOfSpeech {
-                font-size: 1.15rem;
+                color: $h1-light-color;
+                font-size: 1.1rem;
                 font-weight: 600;
                 font-style: italic;
                 letter-spacing: -0.3px;
@@ -55,9 +70,13 @@
                 gap: 1rem;
                 transition: $transition;
 
+                @media (min-width: 768px) {
+                    font-size: 1.15em;
+                }
+
                 &::after {
                     content: "";
-                    background-color: rgba(0, 0, 0, 0.15);
+                    background-color: $border-light-color;
                     display: inline;
                     height: 1px;
                     width: 100%;
@@ -68,48 +87,62 @@
 
             // ========================= Meaning keyword.
             .meaning {
-                color: $text-dark-color;
-                font-size: 1.05rem;
-                letter-spacing: -0.3px;
-                margin: 1.5rem 0 0.7rem;
+                color: $paragraph-light-color;
+                font-size: 1.1em;
+                margin: 1.5rem 0 1rem;
+
+                @media (min-width: 768px) {
+                    font-size: 1.15em;
+                    margin: 2rem 0 1.15rem;
+                }
             }
 
 
             // ========================= Definition.
-            .definition {
-                position: relative;
-                color: #a5a5a5;
-                line-height: 1.2;
-                letter-spacing: -0.3px;
+            .definition-container {
                 display: flex;
-                margin-left: 1rem;
-                margin-bottom: 1.5rem;
-                
-                &::before {
-                    content: ".";
-                    color: #a446e4;
-                    position: absolute;
-                    top: -18px;
-                    left: -18px;
-                    font-size: 2rem;
-                    display: inline;
-                    height: 6px;
-                    width: 6px;
-                    border-radius: 50px;
+                align-items: flex-start;
+                gap: 1rem;
+
+                @media (min-width: 768px) {
+                    margin-left: 1rem;
+                }
+
+                span {
+                    &::after {
+                        content: "";
+                        display: block;
+                        background-color: $pink-light;
+                        height: 6px;
+                        width: 6px;
+                        border-radius: 50px;
+                        margin-top: 0.4rem;
+                        transition: $transition;
+                    }
+                }
+
+                .definition {
+                    color: $text-light-color;
+                    line-height: 1.2;
+                    letter-spacing: 0.3px;
+                    margin-bottom: 1rem;
+                    transition: $transition;
+
+                    @media (min-width: 768px) {
+                        font-size: 1.025em;
+                        margin-bottom: 1.5rem;
+                    }
                 }
             }
 
 
             // ========================= Synonyms container.
             .synonyms-container {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-                margin: 1.5rem 0 2rem;
-                width: 100%;
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 gap: 2rem;
+                margin: 1.5rem 0 2.5rem;
+                width: 100%;
 
                 @media (min-width: 360px) {
                     grid-template-columns: repeat(3, 1fr);
@@ -120,14 +153,23 @@
                 }
 
                 h4 {
-                    color: #a5a5a5;
-                    font-size: 1.2rem;
+                    color: $paragraph-light-color;
+                    font-size: 1.1em;
+
+                    @media (min-width: 768px) {
+                        font-size: 1.15em;
+                    }
                 }
 
                 p {
-                    color: $theme-btn-bg-dark;
+                    color: $pink-light;
                     font-weight: 600;
                     cursor: pointer;
+                    transition: $transition;
+
+                    &:hover {
+                        color: $pink-light-hover;
+                    }
                 }
             }
         }
@@ -137,19 +179,24 @@
         .source-container {
             margin: 2rem 0;
             padding-top: 1.5rem;
-            border-top: 1px solid rgba(0, 0, 0, 0.15);
+            border-top: 1px solid $border-light-color;
 
             p {
                 color: #a5a5a5;
-                margin-bottom: 0.5rem;
+                margin-bottom: 0.7rem;
             }
 
             a {
                 display: flex;
                 align-items: center;
                 gap: 0.5rem;
-                color: #555555;
+                color: $text-light-color;
                 text-decoration: underline;
+                transition: $transition;
+
+                &:hover {
+                    color: $pink-dark;
+                }
             }
         }
     }
@@ -165,12 +212,16 @@
             }
 
             p {
-                color: #a446e4;
+                color: $pink-dark;
             }
         }
 
         .play-btn {
-            color: #a446e4;
+            color: $pink-dark;
+
+            &:hover {
+                color: $pink-dark-hover;
+            }
         }
     }
 
@@ -182,42 +233,73 @@
                 color: $h1-dark-color;
 
                 &::after {
-                    background-color: rgba(255, 255, 255, 0.15);
+                    background-color: $border-dark-color;
                 }
             }
 
-            .meaning {}
+            .meaning {
+                color: $paragraph-dark-color;
+            }
 
+            .definition-container  {
+                span {
+                    &::after {
+                        background-color: $pink-dark;
+                    }
+                }
 
-            .definition {
-                &::before {
-                    color: #d097f8;
+                .definition {
+                    color: $text-dark-color;
                 }
             }
             
             .synonyms-container {
-                h4 {}
-                p {}
+                h4 {
+                    color: $paragraph-dark-color;
+                }
+
+                p {
+                    color: $pink-dark;
+
+                    &:hover {
+                        color: $pink-dark-hover;
+                    }
+                }
             }
         }
 
         .source-container {
-            p {}
+            border-top: 1px solid $border-dark-color;
 
-            a {}
+            p {
+                color: $paragraph-dark-color;
+            }
+
+            a {
+                color: $text-dark-color;
+            }
         }
     }
 }
 
 
+
 // ========================= Resault error message.
 .page-error-no-word {
     text-align: center;
-    margin-top: 2.5rem;
+    margin-top: 3rem;
 
     h1 {
-        font-size: 1.3rem;
-        margin-bottom: 2rem;
+        color: $text-light-color;
+        font-size: 1.35rem;
+        font-weight: 700;
+        line-height: 1.3;
+        margin-bottom: 3rem;
+        transition: $transition;
+
+        @media (min-width: 768px) {
+            margin-bottom: 4rem;
+        }
     }
 
     iframe {
@@ -229,6 +311,6 @@
 // ========================= Resault error message dark.
 .page-error-no-word-dark {
     h1 {
-        color: $h1-dark-color;
+        color: $text-dark-color;
     }
 }
